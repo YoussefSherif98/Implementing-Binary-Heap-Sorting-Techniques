@@ -22,4 +22,7 @@ public interface INode<T extends Comparable<T>> {
 	 */
 	T getValue();
 	void setValue(T value);
+	public void setRchild(INode<T> node);
+	public void setLchild(INode<T> node);
+	
 }

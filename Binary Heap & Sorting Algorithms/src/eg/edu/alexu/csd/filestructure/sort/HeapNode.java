@@ -1,18 +1,21 @@
 package eg.edu.alexu.csd.filestructure.sort;
 
+
+
 public class HeapNode<T extends Comparable<T>> implements INode<T> {
 	
 	private T data;
-	private HeapNode<T> rightChild;
-	private HeapNode<T> leftChild;
-	private HeapNode<T> parent;
+	private INode<T> leftChild;
+	private INode<T> rightChild;
+	private INode<T> parent;
 	
-	public HeapNode(T value,HeapNode<T> Parent) {
+	public HeapNode(T value,INode<T> Parent) {
 		this.data = value;
-		this.leftChild = null ;
-		this.rightChild = null ;
-		this.parent = Parent;
+		this.parent= Parent;
+		this.leftChild = null;
+		this.rightChild = null;
 	}
+	
 
 	public INode<T> getLeftChild() {
 		return this.leftChild;
@@ -32,5 +35,11 @@ public class HeapNode<T extends Comparable<T>> implements INode<T> {
 
 	public void setValue(T value) {
 		this.data = value;
+	}
+	public void setRchild(INode<T> node) {
+		this.rightChild = node;
+	}
+	public void setLchild(INode<T> node) {
+		this.leftChild = node;
 	}
 }
