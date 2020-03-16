@@ -18,7 +18,7 @@ public class tester {
 		long t1,t11,t2,t22,t3,t33,Heap,Insertion,Quick;
 		Random r = new Random();
 	    Formatter x ;
-	    
+
 	    try{
 	    	x = new Formatter("testingSorting.txt");
 	    }
@@ -28,10 +28,10 @@ public class tester {
 	    }
 	    x.format( "DataSize, HeapSort,Quick, Insertion\n");
 		System.out.println("   DataSize   HeapSort        Quick        Insertion ");
-		
+
 		for (int j = 0 ; j<12 ; j++ ) {
-		
-			
+
+
 		for (int i=0 ; i<max ; i++ ) {
 			dummy = r.nextInt(1000000);
 			a.add(dummy);
@@ -42,35 +42,35 @@ public class tester {
 		t1 = System.nanoTime();
 		sort.heapSort(a);
 		t11 = System.nanoTime();
-		
+
 		Heap = t11-t1;
-		
+
 		//Insertion Sort 
 		t2 = System.nanoTime();
 		sort.sortSlow(b);
 		t22 = System.nanoTime();
-		
+
 		Insertion = t22-t2;
-		
+
 		//Quick Sort
 		t3 = System.nanoTime();
 		sort.sortFast(c);
 		t33 = System.nanoTime();
-		
+
 		Quick = t33-t3;
-  		
+
 		x.format("%d, %d, %d, %d\n",max,Heap,Quick,Insertion);
 		System.out.printf("%d] %d  %d  %d  %d\n",j,max,Heap,Quick,Insertion);
-		
-		
+
+
 		a.clear();
 		b.clear();
 		c.clear();
-		
+
 		max = max*2; 
 
 	}
 		x.close();
-	
+
   }
 }
